@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImperialGram – Неофициальный клиент Telegram для Android</title>
+    <link rel="icon" href="" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        :root {
+            --bg: #0f0f0f;
+            --text: #e0e0e0;
+            --text-secondary: #aaaaaa;
+            --accent: #bbbbbb;
+            --card-bg: #1e1e1e;
+            --border: #333333;
+        }
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #f5f5f5;
+                --text: #212121;
+                --text-secondary: #666666;
+                --accent: #444444;
+                --card-bg: #ffffff;
+                --border: #dddddd;
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            padding: 120px 20px 80px;
+            background: linear-gradient(to bottom, rgba(30,30,30,0.8), transparent);
+            position: relative;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            margin-bottom: 20px;
+            transition: transform 0.4s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        h1 {
+            font-size: 3.8em;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 1.4em;
+            color: var(--text-secondary);
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 16px 48px;
+            background: var(--accent);
+            color: #000;
+            text-decoration: none;
+            font-size: 1.4em;
+            font-weight: 500;
+            border-radius: 50px;
+            margin: 40px 0;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+
+        .download-btn:hover {
+            background: #ffffff;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin: 80px 0 40px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .features {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            transition: all 0.4s ease;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.2s; }
+        .feature-card:nth-child(2) { animation-delay: 0.4s; }
+        .feature-card:nth-child(3) { animation-delay: 0.6s; }
+        .feature-card:nth-child(4) { animation-delay: 0.8s; }
+        .feature-card:nth-child(5) { animation-delay: 1.0s; }
+        .feature-card:nth-child(6) { animation-delay: 1.2s; }
+
+        .feature-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+            border-color: var(--accent);
+        }
+
+        .feature-card h3 {
+            font-size: 1.6em;
+            margin-bottom: 16px;
+            color: var(--accent);
+        }
+
+        footer {
+            padding: 60px 20px 40px;
+            background: var(--card-bg);
+            margin-top: 100px;
+            font-size: 1em;
+            color: var(--text-secondary);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://raw.githubusercontent.com/TGX-Android/Telegram-X/master/app/src/main/res/drawable-hdpi/ic_launcher.png" alt="ImperialGram Logo" class="logo">
+        <h1>ImperialGram</h1>
+        <p>Мощный неофициальный клиент Telegram для Android с улучшениями и кастомизацией</p>
+        <a href="https://github.com/ImperGram/ImperialGram/releases" class="download-btn" target="_blank">Скачать APK из Releases</a>
+    </header>
+
+    <section>
+        <h2>Особенности</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3>Современный дизайн</h3>
+                <p>Чистый интерфейс с поддержкой тёмной темы и кастомными элементами.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Расширенная кастомизация</h3>
+                <p>Настройки внешнего вида, иконок и поведения приложения под ваш вкус.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Повышенная производительность</h3>
+                <p>Оптимизации для быстрой работы даже на слабых устройствах.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Приватность</h3>
+                <p>Дополнительные опции для контроля данных и прокси.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Полезные модификации</h3>
+                <p>Экспериментальные функции без лишнего бloat.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Открытый код</h3>
+                <p>Полностью open-source, регулярные обновления.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ImperialGram. Open-source форк Telegram.</p>
+        <p>Канал в Telegram: <a href="https://t.me/ImperialGram" target="_blank">t.me/ImperialGram</a> | 
+           GitHub: <a href="https://github.com/ImperGram/ImperialGram" target="_blank">github.com/ImperGram/ImperialGram</a></p>
+        <p>APK доступен в <a href="https://github.com/ImperGram/ImperialGram/releases" target="_blank">Releases на GitHub</a></p>
+    </footer>
+</body>
+</html>
